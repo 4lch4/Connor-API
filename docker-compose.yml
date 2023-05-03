@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+  web:
+    image: 4lch4/connor-api:latest
+    environment:
+      - OPENAI_API_KEY
+      - KV_REST_API_READ_ONLY_TOKEN
+      - KV_REST_API_TOKEN
+      - KV_REST_API_URL
+      - KV_URL
+      - DEBUG
+    ports:
+      - 8080:8080
+    volumes:
+      - ../brain/vectorStore/:/vectorStore
