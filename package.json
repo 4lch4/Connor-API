@@ -1,0 +1,73 @@
+{
+  "name": "@4lch4/connor",
+  "displayName": "Connor-API",
+  "version": "0.0.0",
+  "description": "The API component of Project Connor.",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "homepage": "https://git.4lch4.io/4lch4/4lch4",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc && tsc-alias",
+    "pretty": "prettier --write .",
+    "lint": "prettier -c .",
+    "test": "echo 'There are currently no tests available.'",
+    "scan": "snyk monitor && snyk code test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "4lch4"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.4lch4.io:22022/4lch4/4lch4.git"
+  },
+  "author": {
+    "name": "4lch4",
+    "email": "hey@4lch4.email",
+    "url": "https://4lch4.com"
+  },
+  "bugs": {
+    "email": "bugs@4lch4.email",
+    "url": "https://git.4lch4.io/4lch4/4lch4/issues"
+  },
+  "dependencies": {
+    "@4lch4/koa-oto": "^2.0.0",
+    "@4lch4/koa-router-printer": "^1.4.3",
+    "@4lch4/logger": "^1.11.0",
+    "@koa/router": "^12.0.0",
+    "@upstash/redis": "^1.20.5",
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.7",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.2.2",
+    "hnswlib-node": "^1.4.2",
+    "huggingface": "^1.4.0",
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "koa-helmet": "^7.0.2",
+    "langchain": "^0.0.66",
+    "logrocket": "^4.0.1",
+    "nanoid": "^4.0.2",
+    "openai": "^3.2.1",
+    "pickle": "^0.2.0",
+    "pocketbase": "^0.14.3",
+    "znv": "^0.3.2",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/koa": "^2.13.6",
+    "@types/koa__router": "^12.0.0",
+    "@types/node": "^18.16.2",
+    "prettier": "^2.8.8",
+    "snyk": "^1.1150.0",
+    "tsc-alias": "^1.8.6",
+    "typescript": "^5.0.4"
+  }
+}
