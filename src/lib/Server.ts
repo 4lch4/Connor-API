@@ -45,6 +45,23 @@ export class Server {
 
     this.app.use(koaBody())
     this.app.use(Helmet())
+    this.app.use(async (ctx, next) => {
+      // Verify the request has a valid API key (apiToken) in the header or query string.
+      const apiToken = ctx.request.headers['api-token'] || ctx.request.query['apiToken']
+
+      if (apiToken !== process.env.ADMIN_API_TOKEN) {
+        logger.error('[Server#addMiddleware]: No API token found in request!')
+        ctx.status = 401
+        ctx.body = {
+          status: 'error',
+          message: 'No, or invalid, API token found in request!',
+        }
+
+        return
+      }
+
+      await next()
+    })
 
     return this // For method chaining
   }
